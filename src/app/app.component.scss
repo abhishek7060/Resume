@@ -1,8 +1,44 @@
-.body-container{
+.body-container {
     display: flex;
-    .left{
+    width: 100%;
+    height: 100%;
+    .left {
+        width: 280px;
+        position: fixed;
+        height: 100%;
     }
-    .right{
-        width: calc(100% - 250px);
+    .right {
+        width: calc(100% - 280px);
+        margin-left: 280px;
+    }
+    .nav-controller {
+        position: absolute;
+        top: 6px;
+        right: 7px;
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .body-container {
+        transition: all 0.3s ease-in-out 0s;
+        .left {
+            transition: all 0.3s ease-in-out 0s;
+            left: -280px;
+            &.open{
+                left: 15px;
+            }
+        }
+        .right {
+            transition: all 0.3s ease-in-out 0s;
+            width: 100%;
+            margin-left: 0;
+            &.open{
+                margin-left: 280px;
+            }
+        }
+        .nav-controller{
+            display: block;
+        }
     }
 }

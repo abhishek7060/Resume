@@ -1,8 +1,10 @@
 <div class="body-container">
-    <div class="left">
+    <div class="left" [class.open]="enableNavPanel">
         <app-side-nav></app-side-nav>
     </div>
-    <div class="right">
+    <div class="right" [class.open]="enableNavPanel">
         <router-outlet></router-outlet>
     </div>
+    <button pButton pRipple type="button" icon="pi pi-bars" (click)="enableNavPanel =! enableNavPanel"
+        class="p-button-rounded nav-controller"></button>
 </div>
