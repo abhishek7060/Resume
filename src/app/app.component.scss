@@ -1,0 +1,8 @@
+.body-container{
+    display: flex;
+    .left{
+    }
+    .right{
+        width: calc(100% - 250px);
+    }
+}

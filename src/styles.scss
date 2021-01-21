@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: 'SourceSansPro';
+    src: url('assets/font/SourceSansPro/SourceSansPro-Light.ttf');
+}
+
+
+body{
+    font-family: SourceSansPro;
+    font-weight: 300;
+    margin: 0;
+}
