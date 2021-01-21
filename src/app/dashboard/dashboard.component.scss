@@ -17,11 +17,11 @@
                 border-radius: 42px;
             }
             .squares {
-                position: absolute;
+                position: fixed;
                 opacity: 0.2;
                 height: 100%;
                 top: 0;
-                width: 100%;
+                // width: 100%;
             }
         }
         .white {
@@ -114,5 +114,12 @@
     }
     to {
         transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+    }
+}
+@media only screen and (max-width: 990px) {
+    .container {
+        .white{
+            width: 1px;
+        }
     }
 }

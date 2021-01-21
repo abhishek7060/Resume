@@ -5,7 +5,7 @@
     .left {
         width: 280px;
         position: fixed;
-        height: 100%;
+        height: 100vh;
     }
     .right {
         width: calc(100% - 280px);
@@ -21,23 +21,38 @@
 
 @media only screen and (max-width: 990px) {
     .body-container {
+        &.open {
+            overflow: hidden;
+            .left {
+                // &.open {
+                    left: 15px;
+                // }
+            }
+            .right {
+                // &.open {
+                    margin-left: 280px;
+                // }
+            }
+        }
+    }
+    .body-container {
         transition: all 0.3s ease-in-out 0s;
         .left {
             transition: all 0.3s ease-in-out 0s;
             left: -280px;
-            &.open{
-                left: 15px;
-            }
+            // &.open {
+            //     left: 15px;
+            // }
         }
         .right {
             transition: all 0.3s ease-in-out 0s;
             width: 100%;
             margin-left: 0;
-            &.open{
-                margin-left: 280px;
-            }
+            // &.open {
+            //     margin-left: 280px;
+            // }
         }
-        .nav-controller{
+        .nav-controller {
             display: block;
         }
     }
