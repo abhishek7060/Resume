@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from './common/shared.module';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { ButtonModule } from 'primeng/button';
 
@@ -18,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    BrowserAnimationsModule,
     ButtonModule
   ],
   providers: [],

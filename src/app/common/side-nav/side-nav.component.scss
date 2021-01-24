@@ -6,42 +6,54 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     margin: 10px;
+    padding-top: 50%;
     .myImage {
+        text-align: center;
+        padding-bottom: 10%;
         img {
             width: 150px;
             height: 150px;
             border-radius: 100px;
         }
         figcaption {
-            background-color: #0062bb;
+            background-color: #0062bb87;
             color: white;
-            font-weight: 600;
+            font-weight: 500;
             text-align: center;
             border-radius: 12px;
-            height: 23px;
+            height: 26px;
             font-size: 17px;
+            line-height: 25px;
+            width: 172px;
         }
     }
     ul {
         color: #ffffffc4;
         list-style: none;
-        font-size: 17px;
+        font-size: 14px;
         padding: 0;
         width: 100%;
         li {
-            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-right: 7px;
+            height: 45px;
             margin-left: 25px;
             padding-left: 16px;
             line-height: 35px;
             border-bottom-left-radius: 15px;
             border-top-left-radius: 15px;
             margin-top: 10px;
-            &:hover {
+            cursor: pointer;
+            &.active {
                 background-color: white;
                 color: #333333;
                 transition: 0.2s ease-in;
+            }
+            i {
+                padding-right: 7px;
             }
         }
     }

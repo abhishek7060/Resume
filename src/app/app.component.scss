@@ -10,6 +10,9 @@
     .right {
         width: calc(100% - 280px);
         margin-left: 280px;
+        overflow: hidden;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
     .nav-controller {
         position: absolute;
@@ -22,7 +25,6 @@
 @media only screen and (max-width: 990px) {
     .body-container {
         &.open {
-            overflow: hidden;
             .left {
                 // &.open {
                     left: 15px;
@@ -30,7 +32,9 @@
             }
             .right {
                 // &.open {
-                    margin-left: 280px;
+                    // margin-left: 280px;
+                    margin-left: 315px;
+                    overflow: hidden;
                 // }
             }
         }

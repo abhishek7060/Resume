@@ -1,54 +1,199 @@
 .container {
     width: 100%;
-    height: 100%;
+    min-width: 350px;
+    // height: 100%;
+    // overflow-y: scroll;
     .section-1 {
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        height: 130vh;
         /* Animation */
-        .line-1 {
-            width: 100%;
-            height: 100%;
+        .top {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: absolute;
-            .anim-typewriter {
-                z-index: 1;
-                background: #ebebeb78;
+            justify-content: space-between;
+            height: 100vh;
+            .line-1 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                .anim-typewriter {
+                    height: 82px;
+                    z-index: 1;
+                    background: #ebebeb78;
+                    color: #37474f;
+                    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+                    font-weight: 900;
+                    font-size: 61px;
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+                        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+                        "Noto Color Emoji";
+                }
+            }
+            .center-image {
+                position: relative;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                z-index: 0;
+                img {
+                    width: 500px;
+                    height: 500px;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    border-radius: 100%;
+                    z-index: 1;
+                }
+                .squares {
+                    position: absolute;
+                    /* height: 100%; */
+                    top: 0;
+                    z-index: -1;
+                    width: 95vw; //remove if needed
+                }
+
+                .arrow {
+                    position: absolute;
+                    top: 90%;
+                    left: 50%;
+                }
+                .arrow span {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    border-bottom: 5px solid #06a8ff;
+                    border-right: 5px solid #06a8ff;
+                    transform: rotate(45deg);
+                    margin: -10px;
+                    animation: animate 2s infinite;
+                }
+                .arrow span:nth-child(2) {
+                    animation-delay: -0.2s;
+                }
+                .arrow span:nth-child(3) {
+                    animation-delay: -0.4s;
+                }
+                @keyframes animate {
+                    0% {
+                        opacity: 0;
+                        transform: rotate(45deg) translate(-20px, -20px);
+                    }
+                    50% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: rotate(45deg) translate(20px, 20px);
+                    }
+                }
+            }
+            .white {
+                width: 100%;
+                height: 100%;
+                min-width: 1px;
+            }
+        }
+        .bottom {
+            height: 30vh;
+            text-align: center;
+            h3 {
+                font-weight: 100;
+                margin: 0;
+            }
+            h1 {
+                // margin: 0;
+                font-size: 29px;
                 color: #37474f;
-                text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
                 font-weight: 900;
-                font-size: 61px;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             }
-        }
-        .center-image {
-            position: relative;
-            img {
-                width: 500px;
-                height: 500px;
-                -o-object-fit: cover;
-                object-fit: cover;
-                border-radius: 100%;
-                z-index: 1;
+            p {
+                width: 69%;
+                text-align: center;
+                margin: 0 auto 22px;
             }
-            .squares {
-                position: fixed;
-                /* opacity: 0.2; */
-                height: 100%;
-                top: 0;
-                z-index: -1;
-                width: 95vw;    //remove if needed
+            .btns {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                button:first-child {
+                    margin-right: 30px;
+                }
             }
         }
-        .white {
+        &::after {
+            content: "";
+            background: linear-gradient(to right, #fff 0%, #90a4ae 50%, #fff 100%);
             width: 100%;
-            height: 100%;
-            min-width: 1px;
+            height: 1px;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+        }
+    }
+    .section-2 {
+        padding: 84px 15%;
+        position: relative;
+        .whatiknow {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            .line {
+                width: 24px;
+                display: block;
+                height: 1px;
+                background-color: black;
+                margin-right: 15px;
+            }
+        }
+        .skills {
+            font-size: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+                sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-weight: 700;
+            color: #37474f;
+            padding-bottom: 60px;
+        }
+        .skill-grid {
+            .card {
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    background: #007ced;
+                    border-radius: 7px;
+                    font-size: 27px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    margin-top: 30px;
+                }
+                .title {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    padding: 16px 0;
+                }
+                p {
+                    color: #5f6f81;
+                    font-size: 14px;
+                }
+            }
+        }
+        &::after {
+            content: "";
+            background: linear-gradient(to right, #fff 0%, #90a4ae 50%, #fff 100%);
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
         }
     }
 }
@@ -140,16 +285,23 @@
 @media only screen and (max-width: 990px) {
     .container {
         .section-1 {
-            .line-1 {
-                .anim-typewriter {
-                    font-size: 26px;
+            height: 145vh;
+            .top {
+                .line-1 {
+                    .anim-typewriter {
+                        font-size: 28px;
+                        height: 38px;
+                    }
+                }
+                .center-image {
+                    img {
+                        width: 300px;
+                        height: 300px;
+                    }
                 }
             }
-            .center-image {
-                img {
-                    width: 300px;
-                    height: 300px;
-                }
+            .bottom {
+                height: 45vh;
             }
         }
         .white {

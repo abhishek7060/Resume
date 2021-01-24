@@ -2,7 +2,7 @@
     <div class="left">
         <app-side-nav></app-side-nav>
     </div>
-    <div class="right">
+    <div class="right" (scroll)="onScroll()">
         <router-outlet></router-outlet>
     </div>
     <button pButton pRipple type="button" icon="pi pi-bars" (click)="enableNavPanel =! enableNavPanel"

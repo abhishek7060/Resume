@@ -1,14 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+// @font-face{
+//     font-family: 'SourceSansPro';
+//     src: url('assets/font/SourceSansPro/SourceSansPro-Light.ttf');
+// }
 @font-face{
-    font-family: 'SourceSansPro';
-    src: url('assets/font/SourceSansPro/SourceSansPro-Light.ttf');
+    font-family: 'Montserrat';
+    src: url('assets/font/Montserrat/Montserrat-Regular.ttf');
 }
 
-
 body{
-    font-family: SourceSansPro;
-    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
     margin: 0;
     height: 100vh;
     overflow: hidden;
+    user-select: none;
 }

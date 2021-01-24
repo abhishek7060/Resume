@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AppServiceService } from '../app-service.service';
 
+const areas = 'home,skills';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
+
   public myProfession = ["FULL STACK DEVELOPER", "UI/UX DESIGNER"];
   loopNum: number;
   el: any;
@@ -13,8 +16,31 @@ export class DashboardComponent implements OnInit {
   period: number;
   txt: string;
   isDeleting: boolean;
-  constructor() { }
+  private scrollSub: any;
 
+  // public currentSection = "home";
+
+  constructor(public appService: AppServiceService) {
+    this.scrollSub = this.appService.currentScroll.subscribe(res => {
+      this.onScroll();
+    })
+  }
+
+  @ViewChildren(areas) sections: QueryList<ElementRef>;
+  onScroll() {
+    const activeSection = this.sections.toArray().findIndex(section => this.isElementInViewport(section.nativeElement));
+    // this.currentSection = areas.split(',')[activeSection];
+    this.appService.changeTab(areas.split(',')[activeSection]);
+  }
+  isElementInViewport(el): unknown {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.bottom - 100 >= 0 &&
+      rect.right >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
 
   ngOnInit() {
     var elements = document.getElementsByClassName('anim-typewriter');
@@ -23,6 +49,10 @@ export class DashboardComponent implements OnInit {
         this.TxtType(elements[i], this.myProfession, 4000);
       }
     }
+  }
+
+  ngOnDestroy() {
+    this.scrollSub.unsubscribe();
   }
 
   TxtType(el, toRotate, period) {

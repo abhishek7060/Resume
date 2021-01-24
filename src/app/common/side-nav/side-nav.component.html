@@ -4,13 +4,13 @@
         <figcaption> Abhishek Anand</figcaption>
     </div>
     <ul>
-        <li>
-            <i class="fa fa-home"></i> HOME
+        <li (click)="scrollTO('home')" [class.active]="currentSection == 'home'" #home>
+            <i class="pi pi-home"></i>&nbsp; HOME
         </li>
-        <li>
-            <i class="fa fa-home"></i> ABOUT
+        <li (click)="scrollTO('skills')" [class.active]="currentSection == 'skills'" #skills>
+            <i class="fa fa-microchip" aria-hidden="true"></i>&nbsp; MY SKILLS
         </li>
-        <li>
+        <!-- <li>
             <i class="fa fa-home"></i> SKILLS
         </li>
         <li>
@@ -18,6 +18,6 @@
         </li>
         <li>
             <i class="fa fa-home"></i> CONTACT
-        </li>
+        </li> -->
     </ul>
 </div>
