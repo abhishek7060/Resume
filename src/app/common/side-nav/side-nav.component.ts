@@ -21,7 +21,23 @@ export class SideNavComponent implements OnInit, OnDestroy {
   scrollTO(id) {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   }
-  ngOnDestroy(){
+  open(type) {
+    if (type == 'linkedin') {
+      window.open("https://www.linkedin.com/in/anand6254/");
+    }
+    if (type == "instagram") {
+      window.open("https://www.instagram.com/abhishek__anand_/?hl=en");
+    }
+    if (type == "facebook") {
+      window.open("https://www.facebook.com/abhishek.anand.587");
+    }
+    if (type == "mail") {
+      var a = document.createElement("a");
+      a.href = "mailto:abhishek7060@gmail.com";
+      a.click();
+    }
+  }
+  ngOnDestroy() {
     this.currentTabRef.unsubscribe();
   }
 }

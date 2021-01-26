@@ -7,13 +7,44 @@ const areas = 'a,b,c';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'abhishek';
   public enableNavPanel = false;
-  constructor( public appService: AppServiceService
+  public lightTheme = true;
+  constructor(public appService: AppServiceService
   ) { }
 
-  onScroll(){
+  ngOnInit() {
+    this.setTheme('theme-light');
+  }
+
+  ngAfterViewInit() {
+
+    setTimeout(() => {
+      document.getElementById("themeSelector").classList.add("displaySelector");
+      setTimeout(() => {
+        document.getElementById("themeSelector").classList.remove("displaySelector");
+      }, 2000);
+    }, 1000);
+  }
+
+  onScroll() {
     this.appService.invokeScroll();
+  }
+
+  // function to set a given theme/color-scheme
+  setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+  }
+
+  // function to toggle between light and dark theme
+  toggleTheme() {
+    this.lightTheme = !this.lightTheme;
+    if (this.lightTheme) {
+      this.setTheme('theme-light');
+    } else {
+      this.setTheme('theme-dark');
+    }
   }
 }

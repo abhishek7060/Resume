@@ -26,8 +26,8 @@
                 .anim-typewriter {
                     height: 82px;
                     z-index: 1;
-                    background: #ebebeb78;
-                    color: #37474f;
+                    background: var(--faded-background-color);
+                    color: var(--font-color2);
                     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
                     font-weight: 900;
                     font-size: 61px;
@@ -109,7 +109,7 @@
             h1 {
                 // margin: 0;
                 font-size: 29px;
-                color: #37474f;
+                color: var(--font-color2);
                 font-weight: 900;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -131,7 +131,7 @@
         }
         &::after {
             content: "";
-            background: linear-gradient(to right, #fff 0%, #90a4ae 50%, #fff 100%);
+            background: linear-gradient(to right, var(--background-color) 0%, #90a4ae 50%, var(--background-color) 100%);
             width: 100%;
             height: 1px;
             position: absolute;
@@ -150,7 +150,7 @@
                 width: 24px;
                 display: block;
                 height: 1px;
-                background-color: black;
+                background-color: var(--font-color1);
                 margin-right: 15px;
             }
         }
@@ -159,11 +159,12 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                 sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-weight: 700;
-            color: #37474f;
+            color: var(--font-color2);
             padding-bottom: 60px;
         }
         .skill-grid {
             .card {
+                padding-right: 1.5rem;
                 .icon {
                     width: 50px;
                     height: 50px;
@@ -182,14 +183,14 @@
                     padding: 16px 0;
                 }
                 p {
-                    color: #5f6f81;
+                    color: var(--font-color4);
                     font-size: 14px;
                 }
             }
         }
         &::after {
             content: "";
-            background: linear-gradient(to right, #fff 0%, #90a4ae 50%, #fff 100%);
+            background: linear-gradient(to right, var(--background-color) 0%, #90a4ae 50%, var(--background-color) 100%);
             width: 100%;
             height: 1px;
             position: absolute;
@@ -208,7 +209,7 @@
                 width: 24px;
                 display: block;
                 height: 1px;
-                background-color: black;
+                background-color: var(--font-color1);
                 margin-right: 15px;
             }
         }
@@ -217,7 +218,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                 sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-weight: 700;
-            color: #37474f;
+            color: var(--font-color2);
             padding-bottom: 60px;
         }
         .experience {
@@ -230,7 +231,7 @@
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
                     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
                 font-weight: 700;
-                color: #37474f;
+                color: var(--font-color2);
             }
             .resume-grid {
                 border-radius: 3px;
@@ -238,7 +239,10 @@
                 .card-design {
                     display: flex;
                     padding: 20px;
-                    border: 1px solid #e0e0e0;
+                    border-radius: 10px;
+                    background-color:var(--card-background-color);
+                    border: 1px solid var(--border-color);
+                    margin-bottom: 2px;
                     .left {
                         img {
                             width: 150px;
@@ -248,7 +252,7 @@
                         width: 25%;
                         margin: auto;
                         font-size: 14px;
-                        color: #616161;
+                        color: var(--font-color7);
                     }
                     .center {
                         width: 50%;
@@ -259,7 +263,7 @@
                         }
                         .description {
                             font-size: 14px;
-                            color: #616161;
+                            color: var(--font-color3);
                             ul {
                                 padding: 0;
                                 list-style: none;
@@ -280,6 +284,8 @@
                             padding: 6px 18px;
                             font-weight: 600;
                             float: right;
+                            min-width: 147px;
+                            text-align: center;
                         }
                     }
                     &:nth-child(1) {
@@ -303,7 +309,7 @@
         }
         &::after {
             content: "";
-            background: linear-gradient(to right, #fff 0%, #90a4ae 50%, #fff 100%);
+            background: linear-gradient(to right, var(--background-color) 0%, #90a4ae 50%, var(--background-color) 100%);
             width: 100%;
             height: 1px;
             position: absolute;
@@ -325,7 +331,7 @@
     width: 1em;
     height: 1em;
     transform: translateY(100%);
-    background: #ebebeb;
+    background: var(--box-color);
     &:nth-child(2) {
         height: 1.5em;
         width: 3em;
@@ -425,6 +431,9 @@
         .section-2,.section-3{
             padding: 84px 5%;
         }
+        .section-2 .skill-grid .card{
+            padding-right: 0;
+        }
         .section-3 {
             .experience {
                 display: block;
@@ -434,6 +443,7 @@
                 }
                 .resume-grid {
                     width: 100%;
+                    margin: 0;
                     .card-design {
                         display: block;
                         .left {

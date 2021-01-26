@@ -1,4 +1,17 @@
 <div class="body-container" [class.open]="enableNavPanel">
+    <div class="theme-selector" id="themeSelector" [class.dark]="!lightTheme">
+        <div class="circle">
+            <div class="crescent"></div>
+        </div>
+
+        <label for="switch" (click)="toggleTheme()">
+            <div class="toggle"></div>
+            <div class="names">
+                <p class="light">Light</p>
+                <p class="dark">Dark</p>
+            </div>
+        </label>
+    </div>
     <div class="left">
         <app-side-nav></app-side-nav>
     </div>

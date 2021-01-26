@@ -1,5 +1,5 @@
 .navigator {
-    background-color: #007ced;
+    background-color: var(--side-nav-background);
     border-radius: 30px;
     height: calc(100% - 20px);
     width: calc(280px - 20px);
@@ -19,7 +19,7 @@
             border-radius: 100px;
         }
         figcaption {
-            background-color: #0062bb87;
+            background-color: var(--name-tile-color);
             color: white;
             font-weight: 500;
             text-align: center;
@@ -48,9 +48,10 @@
             border-top-left-radius: 15px;
             margin-top: 10px;
             cursor: pointer;
+            color: var(--font-color6);
             &.active {
-                background-color: white;
-                color: #333333;
+                background-color: var(--selected-list-item-color);
+                color: var(--font-color5);
                 transition: 0.2s ease-in;
             }
             i {
@@ -72,7 +73,7 @@
             cursor: pointer;
         }
         &::before {
-            background: linear-gradient(to right, #007ced 0%, #ffffff 50%, #007ced 100%);
+            background: linear-gradient(to right, var(--side-nav-background) 0%, #ffffff 50%, var(--side-nav-background) 100%);
             position: absolute;
             left: 0;
             right: 0;
@@ -82,4 +83,7 @@
             top: -18px;
         }
     }
+}
+label {
+    display: block;
 }
