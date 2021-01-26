@@ -8,7 +8,7 @@
         // display: flex;
         // align-items: center;
         // justify-content: space-between;
-        height: 130vh;
+        // height: 130vh;
         /* Animation */
         .top {
             position: relative;
@@ -100,7 +100,7 @@
             }
         }
         .bottom {
-            height: 30vh;
+            // height: 30vh;
             text-align: center;
             h3 {
                 font-weight: 100;
@@ -123,6 +123,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding-bottom: 67px;
                 button:first-child {
                     margin-right: 30px;
                 }
@@ -285,7 +286,7 @@
 @media only screen and (max-width: 990px) {
     .container {
         .section-1 {
-            height: 145vh;
+            // height: 145vh;
             .top {
                 .line-1 {
                     .anim-typewriter {
@@ -301,7 +302,7 @@
                 }
             }
             .bottom {
-                height: 45vh;
+                // height: 45vh;
             }
         }
         .white {
