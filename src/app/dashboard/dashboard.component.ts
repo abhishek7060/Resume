@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
 
-const areas = 'home,skills';
+const areas = 'home,skills,expertise';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
