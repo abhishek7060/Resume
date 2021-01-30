@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
@@ -12,12 +13,16 @@ export class AppServiceService {
   private activeTabInSideNav = new BehaviorSubject<String>("home");
   currentTab = this.activeTabInSideNav.asObservable();
   
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   invokeScroll() {
     this.invokeSccrollToDashboard.next();
   }
   changeTab(data) {
     this.activeTabInSideNav.next(data);
+  }
+
+  postMessage(input){
+    return this.http.post("https://mailthis.to/abhishek-anand", input, {responseType : 'text'});
   }
 }

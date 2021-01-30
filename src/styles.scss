@@ -5,16 +5,26 @@
 // }
 @import "src/assets/styles/variable.scss";
 
-@font-face{
-    font-family: 'Montserrat';
-    src: url('assets/font/Montserrat/Montserrat-Regular.ttf');
+@font-face {
+    font-family: "Montserrat";
+    src: url("assets/font/Montserrat/Montserrat-Regular.ttf");
 }
 
-body{
+body {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     margin: 0;
     height: 100vh;
     overflow: hidden;
     user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007ced;
+    border-radius: 84px;
 }

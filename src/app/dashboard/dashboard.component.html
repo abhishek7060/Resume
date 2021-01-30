@@ -61,8 +61,7 @@
                 and Back-end development area with willingness to learn and master Angular and knowledge
                 Management.</p>
             <div class="btns">
-                <button pButton pRipple type="button" label="HIRE ME" class="p-button-rounded"></button>
-                <a>Contact</a>
+                <button pButton pRipple type="button" label="CONTACT ME" class="p-button-rounded"></button>
             </div>
         </div>
     </section>
@@ -139,7 +138,7 @@
     </section>
     <section class="section-3" id="expertise" #expertise>
         <div class="myresume">
-            <div class="line"></div>MY RESUME
+            <div class="line"></div>HOW I STARTED
         </div>
         <div class="resume"> MY EXPERTISES</div>
 
@@ -233,7 +232,7 @@
                         <div class="description">
                             <ul>
                                 <li>
-                                    I completed my schooling from this affiliated by CBSE. I successful completed all
+                                    I completed my schooling from GGPS affiliated by CBSE. I successful completed all
                                     the credits without any fallout and got A grade overall.
                                 </li>
                             </ul>
@@ -247,4 +246,73 @@
         </div>
         <!-- </div> -->
     </section>
+
+    <section class="section-4" id="contact" #contact>
+        <div class="myresume">
+            <div class="line"></div>WANT TO SAY HELLO
+        </div>
+        <div class="resume">CONTACT</div>
+        <div class="getInTouch">
+            Get In Touch
+        </div>
+
+        <div class="p-grid contact-grid">
+            <div class="p-col-12 p-xl-4 p-lg-12">
+                <div class="card">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="card-value" (click)="open('contact')">+91-9078814225</div>
+                    <div class="card-details">Call Me</div>
+                </div>
+            </div>
+            <div class="p-col-12 p-xl-4 p-lg-12">
+                <div class="card">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="card-value" (click)="open('mail')">abhishek7060@gmail.com</div>
+                    <div class="card-details">Email Me</div>
+                </div>
+            </div>
+            <div class="p-col-12 p-xl-4 p-lg-12">
+                <div class="card">
+                    <div class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></div>
+                    <div class="card-value" (click)="open('linkedin')">Navigate To</div>
+                    <div class="card-details">Find Me on Linkedin</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="getInTouch">
+            Contact Form
+        </div>
+
+        <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+
+            <input type="email" class="item half" name="Email" aria-describedby="emailHelp" placeholder="Your Email"
+                formControlName="Email" pInputText>
+            <input type="text" class="item half" name="Fullname" placeholder="Your Name" formControlName="Fullname"
+                pInputText>
+            <textarea class="item" formControlName="Comment" name="Comment" placeholder="Your Message" pInputTextarea>
+            </textarea>
+            <button pButton pRipple type="submit" label="SEND" class="p-button-rounded"
+                [disabled]="!FormData.valid"></button>
+        </form>
+    </section>
+    <!-- <div class="page-version">
+        Made with 💖
+        Thanks to
+            <img src="assets/images/angular.svg" alt="">
+            Angular 9 LTS & &nbsp;
+\
+            <img src="assets/images/primeng.svg" alt="">
+            PrimeNG 11 LTS
+
+    </div> -->
+    <div class="page-version">
+        💖Built with & Supported By <br>
+        <div class="logos">
+            <img src="assets/images/angular.svg" alt="">
+            <img src="assets/images/primeng.svg" alt="">
+            <img src="assets/images/html5.svg" alt="">
+            <img src="assets/images/css3.svg" alt="">
+        </div>
+    </div>
 </div>

@@ -1,7 +1,8 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppServiceService } from '../app-service.service';
 
-const areas = 'home,skills,expertise';
+const areas = 'home,skills,expertise,contact';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,10 +18,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   txt: string;
   isDeleting: boolean;
   private scrollSub: any;
+  public FormData: FormGroup;
 
   // public currentSection = "home";
 
-  constructor(public appService: AppServiceService) {
+  constructor(public appService: AppServiceService, private builder: FormBuilder) {
     this.scrollSub = this.appService.currentScroll.subscribe(res => {
       this.onScroll();
     })
@@ -41,14 +43,27 @@ export class DashboardComponent implements OnInit, OnDestroy {
       rect.left <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-
   ngOnInit() {
+    this.FormData = this.builder.group({
+      Fullname: new FormControl('', [Validators.required]),
+      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+      Comment: new FormControl('', [Validators.required])
+    })
     var elements = document.getElementsByClassName('anim-typewriter');
     for (var i = 0; i < elements.length; i++) {
       if (this.myProfession) {
         this.TxtType(elements[i], this.myProfession, 4000);
       }
     }
+  }
+
+  onSubmit(FormData) {
+    console.log(FormData)
+    this.appService.postMessage(FormData)
+      .subscribe(response => {
+        console.log(response)
+      }, error => {
+      })
   }
 
   ngOnDestroy() {
@@ -96,4 +111,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }, delta);
   }
 
+
+  open(type) {
+    if (type == 'linkedin') {
+      window.open("https://www.linkedin.com/in/anand6254/");
+    }
+    if (type == "mail") {
+      var a = document.createElement("a");
+      a.href = "mailto:abhishek7060@gmail.com";
+      a.click();
+    } if (type == "contact") {
+      var a = document.createElement("a");
+      a.href = "tel:+919078814225";
+      a.click();
+    }
+  }
 }
