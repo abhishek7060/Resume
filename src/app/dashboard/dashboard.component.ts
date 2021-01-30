@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { AppServiceService } from '../app-service.service';
 
 const areas = 'home,skills,expertise,contact';
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   // public currentSection = "home";
 
-  constructor(public appService: AppServiceService, private builder: FormBuilder) {
+  constructor(public appService: AppServiceService, private builder: FormBuilder, private messageService: MessageService) {
     this.scrollSub = this.appService.currentScroll.subscribe(res => {
       this.onScroll();
     })
@@ -56,12 +57,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }
     }
   }
+  
+  scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
 
   onSubmit(FormData) {
     console.log(FormData)
     this.appService.postMessage(FormData)
       .subscribe(response => {
-        console.log(response)
+        this.messageService.add({severity:'success', summary:'Send Message', detail:'Thanks You for being here. シ '});
       }, error => {
       })
   }
