@@ -124,10 +124,16 @@
                 justify-content: center;
                 align-items: center;
                 padding-bottom: 67px;
-                button {
+                .button {
                     margin-right: 30px;
                     height: 45px;
                     width: 160px;
+                    background-color: #2196f3;
+                    border-radius: 33px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
                 }
             }
         }
