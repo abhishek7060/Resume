@@ -57,11 +57,11 @@
         <div class="bottom">
             <h3> HI THERE!</h3>
             <h1> I'M ABHISHEK ANAND</h1>
-            <p>Innovative Full Stack Developer with comprehensive experience in UI/UX Design, Front-end
+            <p>Full Stack Developer with comprehensive experience in UI/UX Design, Front-end
                 and Back-end development area with willingness to learn and master Angular and knowledge
                 Management.</p>
             <div class="btns">
-                <button pButton pRipple type="button" label="CONTACT ME" class="p-button-rounded" (click)="scrollTo('contact')"></button>
+                <button pButton pRipple type="button" label="CONTACT ME" class="p-button-rounded" (focus)="scrollTo('contact')" (click)="scrollTo('contact')"></button>
             </div>
         </div>
     </section>
@@ -135,6 +135,9 @@
                 </div>
             </div>
         </div>
+
+        <div class="skills"> TECHNICAL SKILLS</div>
+
     </section>
     <section class="section-3" id="expertise" #expertise>
         <div class="myresume">
