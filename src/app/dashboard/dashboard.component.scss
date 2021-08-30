@@ -262,15 +262,18 @@
                     border: 1px solid var(--border-color);
                     margin-bottom: 2px;
                     .left {
-                        img {
-                            width: 150px;
-                            height: 100%;
-                        }
                         text-align: center;
                         width: 25%;
                         margin: auto;
                         font-size: 14px;
                         color: var(--font-color7);
+                        img {
+                            width: 150px;
+                            height: 100%;
+                            &[alt="infosys"] {
+                                width: 120px;
+                            }
+                        }
                     }
                     .center {
                         width: 50%;
@@ -306,7 +309,7 @@
                             text-align: center;
                         }
                     }
-                    &:nth-child(1) {
+                    &:nth-child(n) {
                         .right {
                             .work-time {
                                 background-color: #b3e5fc;
@@ -314,7 +317,7 @@
                             }
                         }
                     }
-                    &:nth-child(2) {
+                    &:nth-child(2n) {
                         .right {
                             .work-time {
                                 background-color: #ffebee;
