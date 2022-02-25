@@ -155,10 +155,13 @@
             //     margin-left: 280px;
             // }
         }
+      
         .nav-controller {
             display: block;
+            z-index: 9999;
         }
         .theme-selector {
+            z-index: 9999;
             right: -180px;
             top: 0px;
             bottom: auto;
